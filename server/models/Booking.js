@@ -24,6 +24,16 @@ const bookingSchema = new moongoose.Schema(
             type: String,
             required: true
         },
+        phone: {
+            type: String,
+            required: true
+        },
+        price: {
+            type: Number
+        }
+    },
+    {
+        timestamps: true
     }
 );
 
