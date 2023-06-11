@@ -31,8 +31,6 @@ const bookingController = {
                 checkOut,
                 numberOfGuests,
                 name,
-                phone,
-                price
             });
 
             return res.status(200).json(bookingDoc);
@@ -51,6 +49,17 @@ const bookingController = {
             return res.status(500).json(err);
         }
     },
+
+    getBookingById: async (req, res) => {
+        try {
+            const { id } = req.params;
+            const booking = await Booking.findById(id).populate('place');
+
+            return res.status(200).json(booking);
+        } catch (err) {
+            return res.status(500).json(err);
+        }
+    }
 };
 
 module.exports = bookingController;
