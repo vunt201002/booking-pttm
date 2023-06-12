@@ -31,6 +31,8 @@ const bookingController = {
                 checkOut,
                 numberOfGuests,
                 name,
+                phone,
+                price
             });
 
             return res.status(200).json(bookingDoc);
